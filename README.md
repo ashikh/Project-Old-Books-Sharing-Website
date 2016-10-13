@@ -1,7 +1,7 @@
 # Project-Old-Books-Sharing-Website
 Select issues in project(github) to view project screenshots
 
-To run this app properly, after downloading and extract
+To run this app properly, after downloading and extract-
 1.Check nodeJs is installed in system
 2.Copy "#Old Book Shelf" folder to any folder in C drive
 3.Open "#Old Book Shelf" folder on cmd prompt
