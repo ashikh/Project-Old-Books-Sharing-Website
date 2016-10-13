@@ -1,63 +1,78 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
 <head>
-	<meta name="author" content="funtour">
-	<meta name="description" content="register with your details">
-	<meta name="keywords" content="register, submit">
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<title>Simple Form</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Funtour-just keep touring</title>
-	<link rel="stylesheet" href="vendor/bootstrap-3.3.6-dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css"/>
-	<script src="vendor/jquery-2.2.2.js"></script>
-	<script src="vendor/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-	</head>
+    <link rel="stylesheet" href="vendor/bootstrap-3.3.6-dist/css/bootstrap.css"/>
+<script src="vendor/jquery-2.2.2.js"></script>    
+<script src="vendor/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+	<style>
+		body{
+			background-color: aliceblue;
+		}
+		#searchBox{
+			float: right;
+			margin-top: 60px;
+			margin-right: 20px;
+		}
+		.container{
+			background-color: white;
+			width: 945px;
+			margin:70px;
+			border: 3px double green;
+		}
+		#sButton{
+			background-color: lightgreen;
+			color: white;
+		}
+	</style>
+	<script>
+	function searchItem(){
+		$(document).ready(function() {
+    var item= document.getElementById('search').value;
+	var url = "http://www.google.co.in/#q="+item;
+	window.open(url, '_blank');
+})	
+	}
+	</script>
+</head>
 <body>
-<header>
-	<img src="images/title.jpg" alt="Funtour" title="Funtour" id="funtour">
-	<h4>Just Keep Touring...</h4>
-	</header>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="nav navbar-inverse navbar-fixed-top">
     <div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand" href="index.html">Funtour</a>
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		</button>
+        <a href="index.html" class="navbar-brand">Simple Form</a>
     </div>
-	<div class="collapse navbar-collapse" id="myNav">
+	<div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="vision.html">Mission &amp; Vision</a></li>
-          <li><a href="offer.html">What we offer</a></li> 
+        <li>
+        <a href="#">Home</a>
+        </li>
+        <li>
+        <a href="#">About Us</a>
+        </li>
+        <li class="active">
+        <a href="index.html">Contact Us</a>
+        </li>
         </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Funtours
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="onespot.html">One spot</a></li>
-          <li><a href="combo.html">Random Combo</a></li> 
-        </ul>
-      </li>
-		<li class="active"><a href="register.html">Register</a></li>
-		<li><a href="contact.html">Contact Us</a></li>
-    </ul>
-	  </div>
-  </div>
-</nav>
+		</div>
+    </nav>
+<div id="searchBox">
+	<form name="search box" id="searchItem">
+        <input type="search" id="search" value="" size="30" maxlength="100" placeholder="Search">
+		<button id="sButton" type="button" onclick="searchItem()">Search</button>
+		</form>
+     </div>
 <div class="container">
-  <h2>Register with your details:</h2>
+  <h2>Traveller's Details:</h2>
   <form class="form-horizontal form-responsive" role="form" name="details" method="post" action="" target="_self">	  
 	<div class="form-group">
       <label class="control-label col-sm-3" name="name">Full Name:</label>
-      <div class="col-sm-4 col-sm-5" >
+      <div class="col-sm-4 col-sm-5 ">
         <input type="text" required autofocus autocomplete="on" class="form-control" id="name" maxlength="50" placeholder="Enter Full Name">
       </div>
     </div>	  
@@ -112,13 +127,7 @@
 	  <div class="form-group">
       <label class="control-label col-sm-3" name="contact">Contact Number:</label>
       <div class="col-sm-4 col-sm-5">
-        <input type="tel" required class="form-control" id="number" placeholder="Enter Your phone number">
-      </div>
-	</div>
-	  <div class="form-group">
-      <label class="control-label col-sm-3" name="expenditure">Enter max expenditure:</label>
-      <div class="col-sm-4 col-sm-5">
-        <input type="number" min="500" required class="form-control" id="expenditure" placeholder="Min Rs.500 per head">
+        <input type="tel" required class="form-control" id="number" placeholder="Enter Your phone  number" pattern="[0-9]+">
       </div>
 	</div>
 	  <div class="form-group">
@@ -131,6 +140,36 @@
       <label class="control-label col-sm-3" name="journey date">Enter Journey Date:</label>
       <div class="col-sm-4 col-sm-5">
         <input type="date" required class="form-control" id="journey">
+      </div>
+	  </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="departure time">Enter Departure Time:</label>
+      <div class="col-sm-2 col-sm-7">
+        <input type="time" required class="form-control" id="depart">
+      </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="arrival time">Enter Arrival Time:</label>
+      <div class="col-sm-2 col-sm-7">
+        <input type="time"  required class="form-control" id="arrive">
+      </div>
+    </div>
+	  </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="company name">Enter Your Company Name:</label>
+      <div class="col-sm-4 col-sm-5">
+        <input type="text" required class="form-control" id="cName" placeholder="Company Name">
+      </div>
+	  </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name=" company website">Enter Company Website:</label>
+      <div class="col-sm-4 col-sm-5">
+        <input type="url" required class="form-control" id="site" placeholder="https://www.companyname.com">
+      </div>
+	  </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="file">Upload supporting files(doc/image):</label>
+      <div class="col-sm-4 col-sm-5">
+		  <input type="file" multiple>
       </div>
 	  </div>
 	  <div class="form-group">
@@ -153,15 +192,5 @@
     </div>
   </form>
 </div>
-<footer class="navbar-bottom">
-<div class="copy"><span class="glyphicon glyphicon-copyright-mark"></span> Funtour Travels Pvt Ltd. All Rights Reserved</div>
-<div id="connect">
-				<a href="http://facebook.com/Funtour" target="_blank" class="facebook"></a>
-				<a href="http://twitter.com/Funtour" target="_blank" class="twitter"></a>
-				<a href="http://plus.google.com/Funtour" target="_blank" class="googleplus"></a>
-				<a href="http://instagram.com/Funtour" target="_blank" class="instagram"></a>
-				<a href="http://youtube.com/Funtour" target="_blank" class="youtube"></a>
-			</div>
-	</footer>
-</body>
+    </body>
 </html>
