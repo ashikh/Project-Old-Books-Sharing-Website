@@ -1,0 +1,68 @@
+<div class="create">
+<div class="alert alert-danger" role="alert" ng-if="isError">Invalid login credentials. Please try again.</div>
+	 <div class="alert alert-success" role="alert" ng-if="isSuccess">Ride Created Successfully</div>
+<div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6">
+        <fieldset>
+            <h2>Enter your new ride details</h2>
+            <hr class="colorgraph">
+			
+
+            <!--            ride from and to address-->
+            <div class="form-group col-md-6">
+                <input name="fromAddress" type="text" id="fromAddress" class="form-control input-lg" placeholder="From Address" ng-model="ride.fromAddress" g-places-autocomplete required ng-change="updateMap();">
+            </div>
+            <div class="form-group col-md-6">
+                <input name="toAddress" type="text" id="toAddress" class="form-control input-lg" placeholder="To Address" ng-model="ride.toAddress" g-places-autocomplete ng-change="updateMap();">
+            </div>
+
+            <!--ride date and time fields-->
+            <div class="form-group col-md-6">
+                <input name="rideDate" type="date" id="rideDate" class="form-control input-lg" placeholder="dd/mm/yyyy" ng-model="ride.rideDate">
+            </div>
+            <div class="form-group col-md-6">
+                <input name="rideTime" type="time" id="rideTime" class="form-control input-lg" placeholder="hh:mm" ng-model="ride.rideTime">
+            </div>
+
+            <!--total capacity-->
+            <div class="form-group col-md-6">
+                <input name="totalCapacity" type="number" id="totalCapacity" min="1" class="form-control input-lg" placeholder="Total capacity" ng-model="ride.totalCapacity">
+            </div>
+
+            <!--            owner and car details-->
+            <div class="form-group col-md-6">
+                <input name="phoneNumber" type="text" id="phoneNumber" class="form-control input-lg" placeholder="Phone Number" ng-model="ride.phoneNo">
+            </div>
+            <div class="form-group col-md-6">
+                <input name="carDetails" type="text" id="carDetails" class="form-control input-lg" placeholder="Car Details" ng-model="ride.carDetails">
+            </div>
+			<div class="form-group col-md-6">
+                <input name="ridePrice" type="number" id="ridePrice" class="form-control input-lg" placeholder="Ride Price" ng-model="ride.ridePrice">
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <fieldset>
+                    <hr class="colorgraph">
+                </fieldset>
+				
+            </div>
+		</fieldset>
+    </div>
+
+    <div class="col-xs-12 col-sm-8 col-md-6" style="margin-top:75px;">
+
+        <ng-map>
+            <directions draggable="true" travel-mode="{{travelMode}}" origin="{{origin}}" destination="{{destination}}">
+            </directions>
+        </ng-map>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <input type="button" name="Create Ride" value="Create Ride" class="btn btn-lg btn-success btn-block" ng-click="createRide(ride);">
+        </div>
+    </div>
+</div>	
+</div>

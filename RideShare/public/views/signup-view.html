@@ -1,0 +1,32 @@
+<div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        <div class="alert alert-danger" role="alert" ng-show="isError">Invalid emailid or password. Please make sure that password and confirm password are same.</div>
+        <fieldset>
+            <h2>Sign Up</h2>
+            <hr class="colorgraph">
+            
+            <div class="form-group">
+                <input name="user_id" type="text" id="user_id" class="form-control input-lg" placeholder="Email Address" ng-model="user.email">
+            </div>
+            
+            <div class="form-group">
+                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" ng-model="user.password">
+            </div>
+            
+             <div class="form-group">
+                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Confirm Password" ng-model="user.confirmpassword">
+            </div>
+            
+            
+            <span class="button-checkbox">
+            <hr class="colorgraph">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="button" name="SignUp" value="Sign Up" class="btn btn-lg btn-success btn-block" ng-click="doSignUp(user);">
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6"> <a href="#/login" class="btn btn-lg btn-primary btn-block">Already registered user ?</a> </div>
+                </div>
+        </span></fieldset>
+        <!--</form>-->
+    </div>
+</div>
