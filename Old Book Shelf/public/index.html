@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--	start of meta data-->
+	<meta name="author" content="ashikh">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--	end of meta data-->
+    <title></title>
+    <base href="/" />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <!-- endbower -->
+    <!-- build:css(.tmp) styles/style.css -->
+    <link rel="stylesheet" href="css/style.css">
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCsXU-otu2LuLOdxuRowIBeUhj3_p9thrI"></script>
+	<link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Voltaire" rel="stylesheet">
+    <!-- endbuild -->
+</head>
+
+<body ng-app="OldBookShelf" ng-controller="mainCtrl">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header>
+
+	</header>
+<!--main content begins-->
+<section>
+        <div ng-view="">
+		</div>
+</section>	
+<!--	end of main content-->
+<!--footer begins-->
+<footer class="navbar-bottom">
+		<div id="connect">
+				<a href="http://facebook.com/OldBookShelf" target="_blank" class="facebook"></a>
+				<a href="http://twitter.com/OldBookShelf" target="_blank" class="twitter"></a>
+				<a href="http://plus.google.com/OldBookShelf" target="_blank" class="googleplus"></a>
+				<a href="http://instagram.com/OldBookShelf" target="_blank" class="instagram"></a>
+				<a href="http://youtube.com/OldBookShelf" target="_blank" class="youtube"></a>
+				</div>
+	<p><span class="glyphicon glyphicon-copyright-mark"></span> Old Book Shelf. All Rights Reserved</p>
+	<div id="policy">
+	<a href="#/terms">Terms &amp; Conditions</a> |
+	<a href="#/privacy">Privacy Policy</a> |
+	<a href="#/cookie">Cookie Policy</a>
+	</div>
+	</footer>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="js/app.js"></script>
+    <script src="js/sdk/webservice.js"></script>
+    <script src="js/controllers/login-ctrl.js"></script>
+    <script src="js/controllers/signup-ctrl.js"></script>
+    <script src="js/controllers/logout-ctrl.js"></script>
+    <script src="js/controllers/donateBook-ctrl.js"></script>
+    <script src="js/controllers/orderBook-ctrl.js"></script>
+	<script src="js/controllers/contact-ctrl.js"></script>
+	<script src="js/slide.js"></script>
+	<script src="js/affix.js"></script>
+	<script src="js/tooltip.js"></script>
+	<script src="js/html5shiv.js"></script>
+	
+	
+    <!-- endbuild -->
+<!--	end of footer-->
+<!--end of body-->
+	
+	</body>
+</html>

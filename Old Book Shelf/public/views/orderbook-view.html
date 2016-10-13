@@ -1,0 +1,81 @@
+<header id="heading">
+		<div id="headName">
+		Old Book Shelf
+		</div>
+		<div id="headLine">
+		Just give and Take
+		</div>
+		</header>
+<nav id="otherNav" class="navbar navbar-inverse" data-spy="affix" data-offset-top="170">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#/">Old Book Shelf</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+<ul class="nav navbar-nav">
+<li class="" ng-if="isAuthenticated"><a href="#/home">Home</a></li>
+<li id="mySignupBtn" class="" ng-if="!isAuthenticated"><a href="#/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+<li id="myLoginBtn" class="" ng-if="!isAuthenticated"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<li ng-if="!isAuthenticated"><a href="#/working">How it Works</a></li>
+<li ng-if="isAuthenticated"><a href="#/about">About Us</a></li>
+<li class="" ng-if="isAuthenticated"><a href="#/donatebook">Send Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/order">Order Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/hall">Hall of Fame</a></li>
+<li ng-if="isAuthenticated"><a href="#/contact">Contact Us</a></li>
+<li ng-if="isAuthenticated"><a href="#/faq">FAQ</a></li>
+<li ng-if="isAuthenticated"><a href="#/logout">Logout</a></li>
+</ul>
+                </div>
+            </div>
+        </nav>
+<div class="container">
+<div class="form-group col-md-3">
+<input type="button" name="SearchBook" value="Refresh Book List" class="btn btn-lg btn-success btn-block" ng-click="searchBook(book);">
+            </div>
+</div>
+<div class="container">
+<div class="alert alert-danger" role="alert" ng-if="isError">No Results Found</div>
+    <div class="alert alert-success" role="alert" ng-if="isSuccess">There are {{searchCount}} Books available on Old Book Shelf. Only 1 book can be ordered per week</div>
+<div id="ordered" class="alert alert-success" role="alert" ng-if="isOrdered">Thank You for Ordering. Your order details will be mailed to you as soon as we ship. Happy Reading!</div>
+	</div>
+<div class="container">
+<h2>Please Refresh list to see all the available books on Old Book Shelf</h2>
+<div class="row">
+    <div class="col-md-12">
+ <!--Display search results in table-->
+        <table id="searchResult" class="table table-bordered table-hover">
+            <thead>
+<!--            	<th>Book Id</th>-->
+                <th>Title of Book</th>
+                <th>Author of the Book</th>
+                <th>Book Genre</th>
+                <th>Select Delivery type</th>
+                <th></th>
+            </thead>
+            
+            <tbody>
+                <tr ng-repeat="item in searchResults">
+<!--                	<td>{{item._id}}</td>-->
+                    <td>{{item.bookTitle}}</td>
+                    <td>{{item.bookAuthor}}</td>
+                    <td>{{item.bookGenre}}</td>
+                    <td><form><input type="radio" value="fast">Fast Delivery<br><input type="radio" value="normal">Normal Delivery</form></td>
+                    <td>
+                         <button title="Order Book" class="btn btn-default btn-success" ng-click="orderBook(item)"> <span class="glyphicon glyphicon-plus-sign"></span> Order Book</button>
+					</td>    
+                </tr>    
+			</tbody>
+        </table>
+    </div>
+</div>
+</div>

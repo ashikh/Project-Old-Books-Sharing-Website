@@ -1,0 +1,71 @@
+<header id="heading">
+		<div id="headName">
+		Old Book Shelf
+		</div>
+		<div id="headLine">
+		Just give and Take
+		</div>
+		</header>
+<nav id="otherNav" class="navbar navbar-inverse" data-spy="affix" data-offset-top="170">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#/">Old Book Shelf</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+<ul class="nav navbar-nav">
+<li class="" ng-if="isAuthenticated"><a href="#/home">Home</a></li>
+<li id="mySignupBtn" class="" ng-if="!isAuthenticated"><a href="#/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+<li id="myLoginBtn" class="" ng-if="!isAuthenticated"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<li ng-if="!isAuthenticated"><a href="#/working">How it Works</a></li>
+<li ng-if="isAuthenticated"><a href="#/about">About Us</a></li>
+<li class="" ng-if="isAuthenticated"><a href="#/donatebook">Send Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/order">Order Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/hall">Hall of Fame</a></li>
+<li ng-if="isAuthenticated"><a href="#/contact">Contact Us</a></li>
+<li ng-if="isAuthenticated"><a href="#/faq">FAQ</a></li>
+<li ng-if="isAuthenticated"><a href="#/logout">Logout</a></li>
+</ul>
+                </div>
+            </div>
+        </nav>
+<div id="leftSide">
+<img id="bookTable" src="../images/novels/goodOmens.jpg" class="img-responsive img-thumbnail novels" alt="Good Omens" data-toggle="tooltip" title="Good Omens" data-placement="bottom">
+</div>
+<div class="container">
+<div class="row  sign" style="margin-top:20px">
+    <div class="alert alert-danger" role="alert" ng-if="isError">Invalid login credentials. Please try again.</div>
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		 <fieldset>
+			 <h3>You are just 1 step away..</h3>
+            <h2>Please Login with your details</h2>
+			 <form class="sign">
+            <div class="form-group">
+                <input name="user_id" type="email" id="user_id" class="form-control input-lg" placeholder="Email Address" ng-model="user.email">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" ng-model="user.password">
+            </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <input type="button" name="Login" value="Login" class="btn btn-lg btn-success btn-block" ng-click="doLogin(user);">
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6"> <a href="#/signup" class="btn btn-lg btn-primary btn-block">Sign Up</a> </div>
+          </div>
+		</form>
+		</fieldset>
+    </div>
+</div>
+</div>
+<div id="right">
+<img id="bookTable" src="../images/novels/jonathanStrange.jpg" class="img-responsive img-thumbnail novels" alt="Jonathan Strange & Mr.Norrell" data-toggle="tooltip" title="Jonathan Strange & Mr.Norrell" data-placement="bottom">
+</div>

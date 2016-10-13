@@ -1,0 +1,81 @@
+<header id="heading">
+		<div id="headName">
+		Old Book Shelf
+		</div>
+		<div id="headLine">
+		Just give and Take
+		</div>
+		</header>
+<nav id="otherNav" class="navbar navbar-inverse" data-spy="affix" data-offset-top="170">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#/">Old Book Shelf</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+<ul class="nav navbar-nav">
+<li class="" ng-if="isAuthenticated"><a href="#/home">Home</a></li>
+<li id="mySignupBtn" class="" ng-if="!isAuthenticated"><a href="#/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+<li id="myLoginBtn" class="" ng-if="!isAuthenticated"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<li ng-if="!isAuthenticated"><a href="#/working">How it Works</a></li>
+<li ng-if="isAuthenticated"><a href="#/about">About Us</a></li>
+<li class="" ng-if="isAuthenticated"><a href="#/donatebook">Send Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/order">Order Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/hall">Hall of Fame</a></li>
+<li ng-if="isAuthenticated"><a href="#/contact">Contact Us</a></li>
+<li ng-if="isAuthenticated"><a href="#/faq">FAQ</a></li>
+<li ng-if="isAuthenticated"><a href="#/logout">Logout</a></li>
+</ul>
+                </div>
+            </div>
+        </nav>
+<div id="rightSlide">
+<!--
+<img id="bookTable" src="../images/novels/kingLear.jpg" class="img-responsive img-thumbnail novels" alt="King Lear" data-toggle="tooltip" title="King Lear" data-placement="bottom">
+<img id="bookTable" src="../images/novels/meninBoat.jpg" class="img-responsive img-thumbnail novels" alt="Three Men in a Boat" data-toggle="tooltip" title="Three Men in a Boat" data-placement="bottom">
+-->
+<img id="bookTable" src="../images/novels/it.jpg" class="img-responsive img-thumbnail novels" alt="IT" data-toggle="tooltip" title="IT" data-placement="bottom">
+<img id="bookTable" src="../images/novels/pridePrejudice.jpg" class="img-responsive img-thumbnail novels" alt="Pride & Prejudice" data-toggle="tooltip" title="Pride & Prejudice" data-placement="bottom">
+</div>
+<div class="container">
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6">
+            <h2>Enter the book details you wanted to send:</h2>		
+            <!--            Book Title & Author -->
+            <div class="form-group">
+                <input name="bookTitle" type="text" id="bookTitle" class="form-control input-lg" placeholder="Title of Book" ng-model="book.bookTitle" required>
+            </div>
+            <div class="form-group">
+                <input name="bookAuthor" type="text" id="bookAuthor" class="form-control input-lg" placeholder="Author of Book" ng-model="book.bookAuthor">
+            </div>
+<!--Book Genre-->
+<input name="bookGenre" type="radio" id="bookGenre" value="Comedy" ng-model="book.bookGenre"> Comedy<br>
+<input name="bookGenre" type="radio" id="bookGenre" value="Drama" ng-model="book.bookGenre"> Drama<br>
+<input name="bookGenre" type="radio" id="bookGenre" value="Fantasy" ng-model="book.bookGenre"> Fantasy<br>
+<input name="bookGenre" type="radio" id="bookGenre" value="Historical Fiction" ng-model="book.bookGenre"> Historical Fiction<br>
+<input name="bookGenre" type="radio" id="bookGenre" value="Horror" ng-model="book.bookGenre"> Horror<br>
+<input name="bookGenre" type="radio" id="bookGenre" value="Mystery" ng-model="book.bookGenre"> Mystery<br>
+<input name="bookGenre" type="radio" id="bookGenre" value="Non-Fiction" ng-model="book.bookGenre"> Non-fiction<br>
+<input name="bookGenre" type="radio" id="bookGenre" value="Science-Fiction" ng-model="book.bookGenre"> Science-fiction<br>
+<input name="bookGenre" type="radio" id="bookGenre" value="Thriller" ng-model="book.bookGenre"> Thriller<br>
+<input name="bookGenre" type="radio" id="bookGenre" value="Tragedy" ng-model="book.bookGenre"> Tragedy
+    </div>
+
+</div>
+<div class="row">
+	<div class="col-xs-4 col-sm-4 col-md-4">
+<input type="button" name="Donate Book" value="Submit Book Details" class="btn btn-sm btn-md btn-lg btn-success" ng-click="donateBook(book);">
+	</div>
+</div>
+<div class="alert alert-danger" role="alert" ng-if="isError">Invalid login credentials. Please try again.</div>
+	 <div id="send" class="alert alert-success" role="alert" ng-if="isSuccess">Request submitted successfully. We will notify the date shortly for taking the book from you.</div>
+</div>

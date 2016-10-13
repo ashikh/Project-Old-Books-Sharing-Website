@@ -1,0 +1,346 @@
+@font-face {
+	font-family: 'Cabin-Regular';
+	src: url('../fonts/Cabin-Regular.ttf');
+}
+body{
+	background-color: white;
+	min-height: 100%;
+	font-family: 'Cabin-Regular', sans-serif;
+}
+/* Home page*/
+#home{
+	background-image: url(../images/bookShelf.png);
+	width: 100%;
+	height: 800px;
+	opacity: 0.8;
+	position: relative;
+}
+/* header*/
+#heading{
+	height: 170px;
+	text-align: center;
+	background-image: url(../images/heading.JPG);
+	background-size: cover;
+}
+#headName{
+	font-family: 'Playball', cursive;
+	color: rebeccapurple;
+	font-size: 72px;
+}
+/* Navigational menu*/
+#homeNav{
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	z-index: 1;
+	box-shadow: 0 4px 5px grey;
+	font-size: 18px;
+}
+#otherNav{
+	width: 100%;
+	z-index: 1;
+	box-shadow: 0 4px 5px grey;
+	font-size: 18px;
+}
+.affix {
+      top: 0;
+      width: 100%;
+  }
+#headLine{
+	font-family: 'Cabin Condensed', sans-serif;
+	font-size: 40px;
+	color: white;
+}
+#name{
+	width: 100%;
+	position: absolute;
+	font-size: 72px;
+	top: 40%;
+	left:0;
+	text-align: center;
+	font-family:'Playball', cursive;
+	color: rebeccapurple;
+}
+#line{
+	width: 100%;
+	position: absolute;
+	font-size: 40px;
+	color: white;
+	top:48%;
+	left: 0;
+	text-align: center;
+	font-family: 'Cabin Condensed', sans-serif;
+}
+#take{
+	padding: 20px;
+}
+/* Books images*/
+#books.container{
+align-content: space-around;	
+}
+#novels.container{
+	width: 100%;
+}
+img.books{
+	width: 350px;
+	height: 300px;
+	float: left;
+	margin: 10px;
+}
+img.novels{
+	height: 275px;
+	width: 185px;
+}
+img.novels:hover{
+	box-shadow: 4px 8px 5px grey;
+}
+#leftSide img.novels,#rightSide img.novels{
+	margin: 0 10px;
+}
+.fee{
+	height: 180px;
+	width: 185px;
+	background-color: lightblue;
+	border: 2px groove darkblue;
+}
+img.picture{
+	margin: 5px auto;
+}
+#shelf{
+	margin: 20px;
+}
+img.shelf{
+	height: 300px;
+	width: 200px;
+	margin: 10px auto;
+}
+img.coupon{
+	width: 200px;
+	height: 210px;
+	float: left;
+	margin: 10px;
+}
+#leftSide, #rightSide, #right, #rightSlide{
+	width: 420px;
+	height: 280px;
+	position: fixed;
+	top: 240px;
+	animation-name: fade;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+}
+#leftSide{
+	left: 0;
+}
+#rightSide, #right, #rightSlide{
+	right: 0;
+}
+#right{
+	width: 210px;
+}
+#rightSlide{
+	position: absolute;
+	top: 270px;
+	height: 350px;
+}
+/*Working*/
+#working{
+	align-content: center;
+	align-items: center;
+	width: 350px;
+}
+img.member,img.steps{
+	margin: 0 auto;
+}
+img.member{
+	height: 250px;
+	width: 175px;
+}
+img.steps{
+	width: 30px;
+	height: 100px;
+	display: block;
+}
+#locationMap, ng-map{
+	height: 350px;
+	width: 100%;
+}
+section{
+	position: relative;
+	min-height: 750px; 
+	height: 100%;
+	width: 100%; 
+	padding-bottom: 10px;
+	margin-bottom: 40px;
+}
+/* About Page*/
+#about .novels{
+animation-name: fade;
+animation-duration: 5s;
+animation-timing-function: linear;
+align-content: space-between;
+}
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.panel-group{
+	position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+	font-size: 14px;
+}
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+	padding: 20px;
+	align-content: space-between;
+}
+.flex-item {
+    width: 33%;
+    margin: 20px;
+	border: 2px solid plum;
+	border-radius: 10px;
+	padding: 15px;
+}
+.flex-item h3{
+	text-align: center;
+	margin: 5px;
+	color: rebeccapurple;
+} 
+.flex-item h4{
+	text-indent: 30px;
+	text-align: justify;
+}
+.alert, .btn{
+	margin: 10px;
+}
+table.give{
+	max-width: 500px;
+	margin: 10px auto;
+}
+#ordered{
+	font-size: 24px;
+	font-weight: bold;
+}
+.address{
+	width: 30%;
+}
+#myCarousel{
+	z-index: -1;
+}
+.carousel-inner > .item > img {
+    width: 100%;
+	height:600px;
+        }
+/* Footer content*/
+footer{
+	background-color: plum;
+	height: 125px;
+	width: 100%;
+	position: relative;
+	color: white; 
+	font-size: 16px; 
+	padding: 15px;
+	margin-top: 20px;
+}
+#policy a{
+	text-align: center;
+	color: white;
+}
+.create{
+	margin:30px 0;
+}
+/* sign up, login form*/
+fieldset{
+	background-color: plum;
+	margin:10px 0;
+	padding: 20px; 
+	border-radius: 15px;
+	box-shadow: 4px 8px 5px grey;
+}
+/*books results table*/
+#searchResult{
+	margin:10px 0;
+	background-color: azure;
+	border-radius: 10px;
+}
+/*social media icons*/
+#connect {
+            float: right;
+            display: inline-block;
+            list-style: none;
+        }
+#connect a {
+	background-image: url(../images/sm-icons.png);
+	background-size: 160px 92px;
+	background-repeat:no-repeat;
+	float: left;
+	display: inline-block;
+	height: 45px;
+	width: 44px;
+	margin: 0 10px;
+}
+#connect a.facebook {
+	background-position: 0px 0px;
+}
+#connect a.googleplus {
+	background-position: -115px 0px;
+}
+#connect a.twitter {
+	background-position: -57px 0px;
+}
+#connect a.instagram {
+	background-position: 0px -47px;
+}
+#connect a.youtube {
+	background-position: -57px -47px;
+}
+/* Media queries for mobile view*/
+@media(max-width:600px){
+	#home{
+		background-position: center;
+		height: 500px;
+	}
+	#heading{
+		vertical-align: bottom;
+	}
+#name, #headName{
+	font-size: 44px;
+}
+#line, #headLine{
+	font-size: 22px;
+}
+img.novels{
+	display: none;
+}
+.container{
+		font-size: 16px;
+	    margin: 5px 0;
+	}
+.flex-container{
+		width: 300px;
+		height: auto;
+		flex-direction: column;
+}
+.flex-item{
+		width: 100%;
+		display: block;
+}
+.carousel-inner > .item > img {
+    width: 100%;
+	height:300px;
+        }
+#locationMap,ng-map{
+	height: 200px;
+	width: 100%;
+}
+	footer{
+		height: 180px;
+	}
+}

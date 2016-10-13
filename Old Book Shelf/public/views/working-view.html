@@ -1,0 +1,87 @@
+<header id="heading">
+		<div id="headName">
+		Old Book Shelf
+		</div>
+		<div id="headLine">
+		Just give and Take
+		</div>
+		</header>
+<div id="otherNav" class="navbar navbar-inverse" data-spy="affix" data-offset-top="170">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#/">Old Book Shelf</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+<ul class="nav navbar-nav">
+<li class="" ng-if="isAuthenticated"><a href="#/home">Home</a></li>
+<li id="mySignupBtn" class="" ng-if="!isAuthenticated"><a href="#/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+<li id="myLoginBtn" class="" ng-if="!isAuthenticated"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<li ng-if="!isAuthenticated"><a href="#/working">How it Works</a></li>
+<li ng-if="isAuthenticated"><a href="#/about">About Us</a></li>
+<li class="" ng-if="isAuthenticated"><a href="#/donatebook">Send Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/order">Order Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/hall">Hall of Fame</a></li>
+<li ng-if="isAuthenticated"><a href="#/contact">Contact Us</a></li>
+<li ng-if="isAuthenticated"><a href="#/faq">FAQ</a></li>
+<li ng-if="isAuthenticated"><a href="#/logout">Logout</a></li>
+</ul>
+                </div>
+            </div>
+        </div>
+<div style="text-align:center"><h2>How it works</h2></div>
+<div class="container-fluid">
+<div id="leftSide">
+<img id="bookTable" src="../images/novels/earthSea.jpg" class="img-responsive img-thumbnail novels" alt="A Wizard of EarthSea" data-toggle="tooltip" title="A Wizard of EarthSea" data-placement="bottom">
+<img id="bookTable" src="../images/novels/hobbit.jpg" class="img-responsive img-thumbnail novels" alt="The Hobbit" data-toggle="tooltip" title="The Hobbit" data-placement="bottom">
+</div>
+<div id="working" class="container">
+<img id="picture" src="../images/picture.png" class="img-responsive img-circle picture" alt="Member" data-toggle="tooltip" title="Sign Up/Login" data-placement="bottom">
+<div class="panel panel-default">
+<div class="panel-body"><h4>Sign Up or Login with your details to send or order a book free of cost<sup><b>*</b></sup></h4>
+	</div>
+	</div>
+<img class="steps" src="../images/steps.png">
+<img class="menu" src="../images/send.JPG">
+<div class="panel panel-default">
+<div class="panel-body"><h4>Enter the details of the book you want to give off by selecting "Send Book" in the menu</h4>
+	</div>
+	</div>
+<img class="steps" src="../images/steps.png">
+<img class="parcel" src="../images/handoff.jpg">
+<div class="panel panel-default">
+<div class="panel-body"><h4>We will collect the book (in good condition) from you</h4>
+	</div>
+	</div>	
+<img class="steps" src="../images/steps.png">
+<img class="menu" src="../images/order.JPG">
+<div class="panel panel-default">
+<div class="panel-body"><h4>Check the list of books on Old Book Shelf and order a book. You can order a book only after we receive the book you sent. It is mandatory to send us a novel if you want one from our shelf.</h4>
+	</div>
+	</div>
+<img class="steps" src="../images/steps.png">
+<img class="parcel" src="../images/parcel.jpg">
+<div class="panel panel-default">
+<div class="panel-body"><h4>Receive the book you ordered. Also get discount coupons as bonus for purchasing latest novels from online stores</h4>
+	</div>
+	</div>
+</div>
+<div id="rightSide">
+<img id="bookTable" src="../images/novels/goneWind.jpg" class="img-responsive img-thumbnail novels" alt="Gone With The Wind" data-toggle="tooltip" title="Gone With The Wind" data-placement="bottom">
+<img id="bookTable" src="../images/novels/theFirm.jpg" class="img-responsive img-thumbnail novels" alt="The Firm" data-toggle="tooltip" title="The Firm" data-placement="bottom">
+</div>
+<div id="working" class="container fee">
+	<h2><b><sup>*</sup>Delivery Prices:</b></h2>
+	<h2>Normal Delivery: Rs.10</h2>
+	<h2>Fast Delivery: Rs.25</h2>
+</div>
+</div>

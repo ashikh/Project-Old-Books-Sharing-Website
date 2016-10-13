@@ -1,0 +1,79 @@
+<header id="heading">
+		<div id="headName">
+		Old Book Shelf
+		</div>
+		<div id="headLine">
+		Just give and Take
+		</div>
+		</header>
+<nav id="otherNav" class="navbar navbar-inverse" data-spy="affix" data-offset-top="170">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#/">Old Book Shelf</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+<ul class="nav navbar-nav">
+<li class="" ng-if="isAuthenticated"><a href="#/home">Home</a></li>
+<li id="mySignupBtn" class="" ng-if="!isAuthenticated"><a href="#/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+<li id="myLoginBtn" class="" ng-if="!isAuthenticated"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<li ng-if="!isAuthenticated"><a href="#/working">How it Works</a></li>
+<li ng-if="isAuthenticated"><a href="#/about">About Us</a></li>
+<li class="" ng-if="isAuthenticated"><a href="#/donatebook">Send Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/order">Order Book</a></li>
+<li ng-if="isAuthenticated"><a href="#/hall">Hall of Fame</a></li>
+<li ng-if="isAuthenticated"><a href="#/contact">Contact Us</a></li>
+<li ng-if="isAuthenticated"><a href="#/faq">FAQ</a></li>
+<li ng-if="isAuthenticated"><a href="#/logout">Logout</a></li>
+</ul>
+                </div>
+            </div>
+        </nav>
+<div class="container">
+<h2>Contact Us</h2>
+<h3>Old Book Shelf</h3>
+<!--	<ng-map id="locationMap"></ng-map>-->
+<div id="locationMap"></div>
+<div class="flex-container">
+  <div class="address flex-item">
+	<address>
+	   #184, Residency Road,<br>
+		Shanthala Nagar,<br>
+		Bangalore 560025
+	  </address>
+	</div>
+  <div class="address flex-item">
+	<address>
+	  #72, 1st Floor,<br>
+	  Pusa Road, Karol Bagh,<br>
+	  New Delhi - 110005
+	  </address>
+	</div>
+  <div class="address flex-item">
+	<address>
+	  #18, Duel Avenue, Alipore,<br>
+	  Kolkata - 700027 
+	  </address>
+	</div>
+  <div class="address flex-item">
+	 <address>
+	  #56, Haddows Road,<br>
+	  Nungambakkam,<br> 
+	  Chennai – 600 006
+	  </address> 
+	</div>
+</div>
+<h4>If you are looking for the following, please contact us-</h4>
+	<h5>Careers:mail your resume to <b>careers@oldbookshelf.com</b></h5>
+<h5>Request for any book/genre:mail your suggestions/queries to <b>query@oldbookshelf.com</b></h5>
+<h5>For Franchise:send your company name, e-mail id and contact number to <b>franchise@oldbookshelf.com</b></h5>
+</div>
