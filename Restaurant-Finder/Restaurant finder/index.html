@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!--	Meta data-->
+	<meta name="author" content="restaurant finder">
+	<meta name="description" content="Food Out is a restaurant finder of a location with details about the services.">
+	<meta name="keywords" content="restaurant, food, hotel, fast-food, eat-out">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food Out-Find a place to feed your hunger</title>
+	<!--	links to external files -->
+	<link rel="stylesheet" href="vendor/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+	<script src="vendor/jquery-2.2.2.js"></script>
+	<script src="vendor/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/modal.css"/>
+<!--	links to web fonts and maps-->
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsXU-otu2LuLOdxuRowIBeUhj3_p9thrI&libraries=places&callback=initMap" async defer></script>
+	<script src="js/script.js"></script>
+<!--
+	[if lt IE 9]>
+	<script src="vendor/html5shiv.js"></script>
+<![endif]
+-->
+</head>
+<body>
+	<!--	body begins-->
+<header id="header">
+	<p>Food Out</p>
+	<h2>Find a place to feed your hunger</h2>
+	</header>
+<!--	navigational menu-->
+<nav class="nav navbar-inverse" data-spy="affix" data-offset-top="170">
+  <div class="navi">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="index.html#header">Food Out</a>
+    </div>
+	<div class="collapse navbar-collapse" id="myNav">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html#header">Home</a></li>
+	<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Food Lovers
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="offers.html#header">Offers</a></li>
+          <li><a href="gallery.html#header">Fave Gallery</a></li> 
+        </ul>
+      </li>
+		<li><a href="review.html#header">Reviews</a></li>
+		<li><a href="register.html#header">Register</a></li>
+		<li><a href="contact.html#header">Contact Us</a></li>
+    </ul>
+		<ul class="nav navbar-nav navbar-right">
+        <li><a id="mySignupBtn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a id="myLoginBtn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+  </div>
+	</div>
+</nav>
+<!--	end of navigational menu-->
+<!--	main content begins-->
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>Feeling hungry?</h1> 
+    <p>Looking for nearest eat out place?</p>
+  </div>
+	</div>
+<div class="container">
+<p>Food Out is a Restaurant finder of a location with details about the services.</p>
+<section>
+<form class="form-responsive" role="form" name="search" method="get" action="#">	  
+	<div class="form-group" id="locationField">
+	<label id="findrestaurant" class="form-label">
+  Find Restaurants in:
+		</label>
+<span id="controls" class="form-control">
+  <select id="country">
+    <option value="all">All</option>
+    <option value="au">Australia</option>
+    <option value="br">Brazil</option>
+    <option value="ca">Canada</option>
+    <option value="fr">France</option>
+    <option value="de">Germany</option>
+    <option value="in" selected>India</option>
+    <option value="mx">Mexico</option>
+    <option value="nz">New Zealand</option>
+    <option value="it">Italy</option>
+    <option value="za">South Africa</option>
+    <option value="es">Spain</option>
+    <option value="pt">Portugal</option>
+    <option value="us">U.S.A.</option>
+    <option value="uk">United Kingdom</option>
+	</select></span>
+      <label class="control-label" name="name">Enter Location:</label>
+		 <input type="text" required autocomplete="on" onkeypress="onPlaceChanged()" class="form-control" id="autocomplete" maxlength="40" placeholder="Just enter the location and check out restaurant with best services"/>
+		<button type="button" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-search"> Search</span></button>
+	</div>
+		</form>
+<!--map display-->
+<div id="map"></div>
+<div id="view">
+<h4 id="msg" style="display:none">Click on a restaurant for details:</h4>
+<div id="listing">
+  <table id="resultsTable">
+	  <tbody id="results"></tbody>
+  </table>
+</div>
+<!--displaying results in table-->
+  <div id="mainTable">
+    <table>
+		<tr id="rName" class="rRow">
+        <th class="info">Name:</th>
+        <td id="name"></td>
+      </tr>
+      <tr id="rAddress" class="rRow">
+        <th class="info">Address:</th>
+        <td id="address"></td>
+      </tr>
+      <tr id="rPhone" class="rRow">
+        <th class="info">Telephone:</th>
+        <td id="phone"></td>
+      </tr>
+      <tr id="rRating" class="rRow">
+        <th class="info">Rating:</th>
+        <td id="rating"></td>
+      </tr>
+      <tr id="rWebsite" class="rRow">
+		  <th class="info">Website:</th>
+        <td id="website"></td>
+      </tr>
+	  <tr id="rOpening" class="rRow">
+		  <th class="info">Working Hours:</th>
+		  <td id="opening"></td>
+      </tr>
+    </table>
+  </div>
+	</div>
+	
+<div style="display: none">
+  <div id="info-content">
+    <table>
+      <tr id="iw-url-row" class="iw_table_row">
+        <td id="iw-icon" class="iw_table_icon"></td>
+        <td id="iw-url"></td>
+      </tr>
+      <tr id="iw-address-row" class="iw_table_row">
+        <td class="iw_attribute_name">Address:</td>
+        <td id="iw-address"></td>
+      </tr>
+      <tr id="iw-phone-row" class="iw_table_row">
+        <td class="iw_attribute_name">Telephone:</td>
+        <td id="iw-phone"></td>
+      </tr>
+      <tr id="iw-rating-row" class="iw_table_row">
+        <td class="iw_attribute_name">Rating:</td>
+        <td id="iw-rating"></td>
+      </tr>
+      <tr id="iw-website-row" class="iw_table_row">
+        <td class="iw_attribute_name">Website:</td>
+        <td id="iw-website"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+</section>
+	</div>
+<!-- The Signup Modal -->
+<div id="mySignupModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="spanS" class="close">×</span>
+      <h2>Sign Up</h2>
+    </div>
+    <div class="modal-body">
+      <form class="form-horizontal form-responsive" role="form" autocomplete="off" name="details" method="post" action="" target="_self">
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userName">User Name:</label>
+      <div class="col-sm-8" >
+        <input type="text" required autofocus class="form-control" id="userName" placeholder="Enter Username">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userEmail">Email:</label>
+      <div class="col-sm-8" >
+        <input type="email" required class="form-control" id="userEmail" placeholder="Enter Email">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userPwd">Password:</label>
+      <div class="col-sm-8" >
+        <input type="password" required class="form-control" id="userPwd" placeholder="Enter Password">
+      </div>
+    </div>
+	<div class="form-group">
+      <div class="col-sm-offset-6 col-sm-6">
+		  <button type="button" name="signup button" class="btn btn-success btn-md" id="usersignup">Sign Up</button>
+      </div>
+    </div>
+</form>
+    </div>
+  </div>
+</div>
+<!-- The Login Modal -->	
+<div id="myLoginModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="spanL" class="close">×</span>
+      <h2>Login</h2>
+    </div>
+    <div class="modal-body">
+      <form class="form-horizontal form-responsive" role="form" autocomplete="off" name="details" method="post" action="" target="_self">
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userEmail">Email:</label>
+      <div class="col-sm-8" >
+        <input type="email" required class="form-control" id="userEmail" placeholder="Enter Email">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userPwd">Password:</label>
+      <div class="col-sm-8" >
+        <input type="password" required class="form-control" id="userPwd" placeholder="Enter Password">
+      </div>
+    </div>
+	<div class="form-group">
+      <div class="col-sm-offset-6 col-sm-6">
+		  <button type="button" name="login button" class="btn btn-success btn-md" id="userlogin">Login</button>
+      </div>
+    </div>
+</form>
+    </div>
+  </div>
+</div>
+<!--footer content-->
+<footer>
+<div class="copy"><span class="glyphicon glyphicon-copyright-mark"></span> Food Out. All Rights Reserved</div>
+<div id="policy">
+	<a href="terms.html#header">Terms of Use</a> |
+	<a href="disclaimer.html#header">Disclaimer</a> |
+	<a href="privacy.html#header">Privacy Policy</a>
+	</div>
+<!--	social media icons-->
+<div id="connect">
+				<a href="http://facebook.com/foodout" target="_blank" class="facebook"></a>
+				<a href="http://twitter.com/foodout" target="_blank" class="twitter"></a>
+				<a href="http://plus.google.com/foodout" target="_blank" class="googleplus"></a>
+				<a href="http://instagram.com/foodout" target="_blank" class="instagram"></a>
+				<a href="http://youtube.com/foodout" target="_blank" class="youtube"></a>
+				</div>
+	</footer>
+	<script src="js/index.js"></script>
+<!--	end of body-->
+</body>
+</html>

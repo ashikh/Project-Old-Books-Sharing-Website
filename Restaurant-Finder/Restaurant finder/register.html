@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!--	Meta data-->
+	<meta name="author" content="restaurant finder">
+	<meta name="description" content="Food Out is a restaurant finder of a location with details about the services. Register your restaurant if not found">
+	<meta name="keywords" content="restaurant, food, hotel, fast-food, eat-out, registration">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food Out-Find a place to feed your hunger</title>
+	<!--	links to external files -->
+	<link rel="stylesheet" href="vendor/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+	<script src="vendor/jquery-2.2.2.js"></script>
+	<script src="vendor/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/modal.css">
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
+	<!--
+	[if lt IE 9]>
+	<script src="vendor/html5shiv.js"></script>
+<![endif]
+-->
+	</head>
+<body>
+<header id="header">
+	<p>Food Out</p>
+	<h2>Find a place to feed your hunger</h2>
+	</header>
+	<nav class="nav navbar-inverse" data-spy="affix" data-offset-top="170">
+  <div class="navi">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="index.html#header">Food Out</a>
+    </div>
+	<div class="collapse navbar-collapse" id="myNav">
+    <ul class="nav navbar-nav">
+      <li><a href="index.html#header">Home</a></li>
+	<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Food Lovers
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="offers.html#header">Offers</a></li>
+          <li><a href="gallery.html#header">Fave Gallery</a></li> 
+        </ul>
+      </li>
+		<li><a href="review.html#header">Reviews</a></li>
+		<li class="active"><a href="register.html#header">Register</a></li>
+		<li><a href="contact.html#header">Contact Us</a></li>
+    </ul>
+	<ul class="nav navbar-nav navbar-right">
+        <li><a id="mySignupBtn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a id="myLoginBtn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+  </div>
+	</div>
+</nav>
+<div class="container">
+  <h2>Register your restaurant details if not found on map:</h2>
+	<h4>We will verify and update soon on map</h4>
+  <form class="form-horizontal form-responsive" role="form" name="details" method="post" action="" target="_self">	  
+	<div class="form-group">
+      <label class="control-label col-sm-3" name="name">Restaurant Name:</label>
+      <div class="col-sm-4 col-sm-5" >
+        <input type="text" required autofocus autocomplete="on" class="form-control" id="name" maxlength="50" placeholder="Enter Restaurant Name">
+      </div>
+    </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="owner">Restaurant Owner Name:</label>
+      <div class="col-sm-4 col-sm-5" >
+        <input type="text" required autofocus autocomplete="on" class="form-control" id="owner" maxlength="50" placeholder="Enter Owner Name">
+      </div>
+    </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="description">Enter description of your restaurant:</label>
+      <div class="col-sm-4 col-sm-5">
+		  <textarea rows="5" required maxlength="1000" class="form-control" placeholder="Your message here"></textarea>
+      </div>
+	  </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="date">Restaurant opened on:</label>
+      <div class="col-sm-4 col-sm-5">
+        <input type="date" required class="form-control" id="date">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3" name="email">Enter your Email:</label>
+      <div class="col-sm-4 col-sm-5">
+        <input type="email" required class="form-control" id="email" placeholder="Enter email">
+      </div>
+    </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="type">Restaurant Type:</label>
+      <div class="col-sm-4 col-sm-5">
+	  <input list="type" name="type" required class="form-control">
+<datalist id="type">
+<option value="Fast Food">
+<option value="Multicuisine">
+<option value="Dining">
+<option value="International">
+</datalist>
+		  </div>
+    </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="address">Enter your restaurant address:</label>
+      <div class="col-sm-4 col-sm-5">
+		  <textarea rows="5" required maxlength="1000" class="form-control" placeholder="Your restaurant address here"></textarea>
+      </div>
+	  </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="contact">Restaurant Number:</label>
+      <div class="col-sm-4 col-sm-5">
+        <input type="tel" required class="form-control" id="number" placeholder="Enter Your restaurant phone number">
+      </div>
+	</div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="restaurant website">Enter Restaurant Website:</label>
+      <div class="col-sm-4 col-sm-5">
+        <input type="url" required class="form-control" id="site" placeholder="https://www.restaurantname.com">
+      </div>
+	  </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-3" name="file">Upload restaurant images:</label>
+      <div class="col-sm-4 col-sm-5">
+		  <input type="file" multiple>
+      </div>
+	  </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-4 col-sm-6">
+        <div class="checkbox">
+          <label><input type="checkbox">Delivery Service</label>
+		  <label><input type="checkbox">Catering Service</label>
+        </div>
+      </div>
+	  </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-4 col-sm-6">
+		  <button type="submit" name="submit button" class="btn btn-success" id="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+
+<div id="connect">
+				<a href="http://facebook.com/foodout" target="_blank" class="facebook"></a>
+				<a href="http://twitter.com/foodout" target="_blank" class="twitter"></a>
+				<a href="http://plus.google.com/foodout" target="_blank" class="googleplus"></a>
+				<a href="http://instagram.com/foodout" target="_blank" class="instagram"></a>
+				<a href="http://youtube.com/foodout" target="_blank" class="youtube"></a>
+				</div>
+</div>
+<!-- The Signup Modal -->
+<div id="mySignupModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="spanS" class="close">×</span>
+      <h2>Sign Up</h2>
+    </div>
+    <div class="modal-body">
+      <form class="form-horizontal form-responsive" role="form" autocomplete="off" name="details" method="post" action="" target="_self">
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userName">User Name:</label>
+      <div class="col-sm-8" >
+        <input type="text" required autofocus class="form-control" id="userName" placeholder="Enter Username">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userEmail">Email:</label>
+      <div class="col-sm-8" >
+        <input type="email" required class="form-control" id="userEmail" placeholder="Enter Email">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userPwd">Password:</label>
+      <div class="col-sm-8" >
+        <input type="password" required class="form-control" id="userPwd" placeholder="Enter Password">
+      </div>
+    </div>
+	<div class="form-group">
+      <div class="col-sm-offset-6 col-sm-6">
+		  <button type="button" name="signup button" class="btn btn-success btn-md" id="usersignup">Sign Up</button>
+      </div>
+    </div>
+</form>
+    </div>
+  </div>
+</div>
+<!-- The Login Modal -->	
+<div id="myLoginModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="spanL" class="close">×</span>
+      <h2>Login</h2>
+    </div>
+    <div class="modal-body">
+      <form class="form-horizontal form-responsive" role="form" autocomplete="off" name="details" method="post" action="" target="_self">
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userEmail">Email:</label>
+      <div class="col-sm-8" >
+        <input type="email" required class="form-control" id="userEmail" placeholder="Enter Email">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" name="userPwd">Password:</label>
+      <div class="col-sm-8" >
+        <input type="password" required class="form-control" id="userPwd" placeholder="Enter Password">
+      </div>
+    </div>
+	<div class="form-group">
+      <div class="col-sm-offset-6 col-sm-6">
+		  <button type="button" name="login button" class="btn btn-success btn-md" id="userlogin">Login</button>
+      </div>
+    </div>
+</form>
+    </div>
+  </div>
+</div>
+<footer>
+<div class="copy"><span class="glyphicon glyphicon-copyright-mark"></span> Food Out. All Rights Reserved</div>
+<div id="policy">
+	<a href="terms.html#header">Terms of Use</a> |
+	<a href="disclaimer.html#header">Disclaimer</a> |
+	<a href="privacy.html#header">Privacy Policy</a>
+	</div>
+	</footer>
+<script src="js/index.js"></script>
+</body>
+</html>
